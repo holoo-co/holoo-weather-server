@@ -1,0 +1,13 @@
+#Server embedded configuration
+
+#Spring configuration
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+#Custome application configuration
+
+#Logback logging configuration
