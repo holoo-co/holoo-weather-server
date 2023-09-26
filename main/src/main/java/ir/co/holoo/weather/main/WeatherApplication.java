@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.context.MessageSourceAutoConfigura
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(
         exclude = {
@@ -21,6 +22,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EntityScan(basePackages = {"ir.co.holoo.weather.model"})
 @ConfigurationPropertiesScan(basePackages = {"ir.co.holoo.weather.service.properties"})
 @EnableDiscoveryClient
+@EnableJpaRepositories(basePackages = {"ir.co.holoo.weather.persistence.jpa"})
 public class WeatherApplication {
 
     public static void main(String[] args) {

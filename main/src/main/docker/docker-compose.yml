@@ -1,1 +1,20 @@
 version: '3.8'
+services:
+  mysql:
+    tty: true
+    stdin_open: true
+    image: mysql:8.0.33
+    container_name: holoo-weather-mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: pskPSK258##
+      MYSQL_DATABASE: holoo-weather-service
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
+    driver: local
+    name: mysql-data
